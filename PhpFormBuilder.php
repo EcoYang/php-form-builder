@@ -220,7 +220,7 @@ class PhpFormBuilder {
 				$output .= ' id="' . $this->form['id'] . '"';
 			}
 
-			if ( count( $this->form['class'] ) > 0 ) {
+			if (is_array($this->form['class']) && count( $this->form['class'] ) > 0 ) {
 				$output .= $this->_output_classes( $this->form['class'] );
 			}
 
@@ -495,7 +495,7 @@ class PhpFormBuilder {
 
 		$output = '';
 
-		
+
 		if ( is_array( $classes ) && count( $classes ) > 0 ) {
 			$output .= ' class="';
 			foreach ( $classes as $class ) {
